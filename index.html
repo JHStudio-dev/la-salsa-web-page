@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Salsa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-light">
+
+    <nav class="navbar navbar-expand-lg fixed-top jh-navbar">
+        <div class="container">
+            <a class="navbar-brand jh-logo" href="#">La Salsa</a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-lg-4 text-center">
+                    <li class="nav-item"><a class="nav-link text-uppercase" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase" href="#menu">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase" href="#horarios">Horarios</a></li>
+                </ul>
+                <div class="ms-lg-4 text-center mt-3 mt-lg-0">
+                    <button class="btn jh-btn-primary rounded-pill px-4 fw-bold">PEDIR</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="jh-hero-section py-5 mt-5">
+            <div class="container text-center pt-5">
+                <h1 class="display-2 fw-800 jh-title">Bienvenidos a La Salsa</h1>
+                <p class="jh-subtitle text-uppercase">Nuestros mejores platillos</p>
+            </div>
+
+            <div class="jh-slider-container">
+                </div>
+        </header>
+
+        <section id="menu" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 jh-section-title">El Menú</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card jh-card h-100 bg-transparent border-secondary shadow-sm">
+                            <img src="fotos/food.jpg" class="card-img-top rounded-4" alt="Platillo">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Tacos Especiales</h5>
+                                <p class="card-text text-secondary">Preparados con ingredientes frescos del día.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+<!---footer-->
+<footer class="py-4 text-center border-top border-secondary mt-5">
+        <p class="text-secondary small">&copy; 2026 La Salsa. Tegucigalpa, Honduras.</p>
+    </footer>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+    </html>
