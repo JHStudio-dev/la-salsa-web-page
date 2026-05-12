@@ -144,8 +144,28 @@
   </div>
 </div>
 
-<!-- Carrito flotante -->
-<div class="jh-carrito" onclick="jhPedirWhatsapp()">
+<!-- Panel del carrito -->
+<div id="jh-cart-panel" class="jh-cart-panel">
+  <div class="jh-cart-panel__head">
+    <span class="jh-cart-panel__title">Tu pedido</span>
+    <button class="jh-cart-panel__vaciar" onclick="jhVaciarCarrito()">✕ Vaciar todo</button>
+  </div>
+  <div class="jh-cart-panel__items" id="jh-cart-items">
+    <div class="jh-cart-empty">Tu carrito está vacío 🌶</div>
+  </div>
+  <div class="jh-cart-panel__foot">
+    <div class="jh-cart-panel__total">
+      <span class="jh-cart-panel__total-lbl">Total</span>
+      <span class="jh-cart-panel__total-num" id="jh-cart-total">L. 0</span>
+    </div>
+    <button class="jh-btn-whatsapp" onclick="jhPedirWhatsapp()">
+      <span>📲 Enviar pedido por WhatsApp</span>
+    </button>
+  </div>
+</div>
+
+<!-- Botón flotante -->
+<div class="jh-carrito" id="jh-carrito-btn" onclick="jhToggleCarrito()">
   🛒
   <span id="jh-carrito-badge" class="jh-carrito__badge" style="display:none">0</span>
 </div>
