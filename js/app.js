@@ -155,6 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === this) jhCerrarModal();
   });
   // carrito
+  document.getElementById('jh-cart-panel').addEventListener('click', function(e) {
+  e.stopPropagation();
+});
   document.addEventListener('click', function(e) {
   const panel  = document.getElementById('jh-cart-panel');
   const btn    = document.getElementById('jh-carrito-btn');
