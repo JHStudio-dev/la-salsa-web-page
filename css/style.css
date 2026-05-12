@@ -325,3 +325,260 @@ body {
             translateZ(240px);
     }
 }
+
+/* Modal (aun no se ve bien) */
+.jh-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.jh-modal.jh-modal--active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.jh-modal__panel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(232, 86, 10, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+  transform: translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.jh-modal.jh-modal--active .jh-modal__panel {
+  transform: translateY(0);
+}
+
+.jh-modal__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.jh-modal__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.jh-modal__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(10,10,10,0.7) 100%);
+}
+
+.jh-modal__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(232, 86, 10, 0.9);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 2px;
+}
+
+.jh-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  background: rgba(10,10,10,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.jh-modal__close:hover {
+  background: rgba(232, 86, 10, 0.6);
+}
+
+.jh-modal__body {
+  padding: 20px;
+}
+
+.jh-modal__nombre {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--blanco-crema);
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.jh-modal__desc {
+  font-size: 0.82rem;
+  color: var(--gris-medio);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.jh-modal__tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.jh-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid rgba(232, 86, 10, 0.3);
+  color: rgba(232, 86, 10, 0.8);
+  border-radius: 2px;
+}
+
+.jh-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 16px;
+  margin-bottom: 14px;
+}
+
+.jh-modal__precio {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--naranja-salsa);
+}
+
+.jh-modal__qty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.jh-qty-btn {
+  width: 30px;
+  height: 30px;
+  background: rgba(232, 86, 10, 0.1);
+  border: 1px solid rgba(232, 86, 10, 0.3);
+  color: var(--naranja-salsa);
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+.jh-qty-btn:hover {
+  background: rgba(232, 86, 10, 0.25);
+}
+
+.jh-qty-num {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--blanco-crema);
+  min-width: 20px;
+  text-align: center;
+}
+
+.jh-btn-agregar {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--naranja-salsa);
+  color: var(--naranja-salsa);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  border-radius: 0;
+}
+
+.jh-btn-agregar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--naranja-salsa);
+  transform: translateX(-101%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jh-btn-agregar:hover::before {
+  transform: translateX(0);
+}
+
+.jh-btn-agregar:hover {
+  color: #fff;
+}
+
+/* Carrito flotante */
+.jh-carrito {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 54px;
+  height: 54px;
+  background: var(--naranja-salsa);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(232, 86, 10, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.jh-carrito:hover {
+  transform: scale(1.08);
+}
+
+.jh-carrito__badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #fff;
+  color: var(--naranja-salsa);
+  font-size: 10px;
+  font-weight: 800;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
