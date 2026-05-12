@@ -20,55 +20,164 @@ body {
     overflow-x: hidden;
 }
 
-/*  Navbar  */
+
+/* Navbar */
 .jh-navbar {
-    background: rgba(10, 10, 10, 0.01) !important; 
+    background: rgba(10, 10, 10, 0.01) !important;
     backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0); 
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
-    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 18px 0;
 }
+
 .jh-navbar.navbar-scrolled {
     background: rgba(10, 10, 10, 0.85) !important;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px 0; 
+    border-bottom: 1px solid rgba(232, 86, 10, 0.15);
+    padding: 12px 0;
 }
+
+/* Logo */
+.jh-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.jh-logo-mark {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--naranja-salsa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--naranja-salsa);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.jh-logo-mark::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid var(--naranja-salsa);
+    border-left: 2px solid var(--naranja-salsa);
+}
+
+.jh-logo-mark::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 9px;
+    height: 9px;
+    border-bottom: 2px solid var(--naranja-salsa);
+    border-right: 2px solid var(--naranja-salsa);
+}
+
+.jh-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.jh-logo-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--blanco-crema);
+    letter-spacing: -0.5px;
+}
+
+.jh-logo-tagline {
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    color: var(--naranja-salsa);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 3px;
+}
+
+/* Links */
 .nav-link {
-    font-size: 0.95rem;
-    letter-spacing: 1px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gris-medio) !important;
     position: relative;
     transition: color 0.3s ease;
-    color: var(--blanco-crema);
+    padding: 6px 0 !important;
 }
+
+.nav-link:hover {
+    color: var(--blanco-crema) !important;
+}
+
 .nav-link::after {
     content: '';
     position: absolute;
+    bottom: -2px;
+    left: 0;
     width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: var(--naranja-salsa);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
+    height: 1px;
+    background: var(--naranja-salsa);
+    transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
-    width: 80%;
-}
-.jh-logo {
-    font-weight: 800;
-    color: var(--naranja-salsa) !important;
-    font-size: 1.8rem;
+    width: 100%;
 }
 
+/* Botón Pedir */
+.jh-btn-primary {
+    background: transparent;
+    border: 1px solid var(--naranja-salsa) !important;
+    color: var(--naranja-salsa);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    padding: 9px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    border-radius: 0 !important;
+}
+
+.jh-btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--naranja-salsa);
+    transform: translateX(-101%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jh-btn-primary span,
+.jh-btn-primary {
+    position: relative;
+    z-index: 1;
+}
+
+.jh-btn-primary:hover {
+    color: #fff;
+}
+
+.jh-btn-primary:hover::before {
+    transform: translateX(0);
+}
 /* Títulos y Textos */
 .jh-title {
     color: var(--naranja-salsa);
     font-weight: 800;
     text-transform: none;
+    font-family:  'Fira Display', serif;
+    letter-spacing: -1px;
 }
 
 .jh-subtitle {
@@ -110,6 +219,7 @@ body {
     text-align: center;
     overflow: hidden;
     position: relative;
+    box-shadow: var(--negro-fondo);
 }
 .jh-banner .jh-slider {
     position: absolute;
@@ -140,4 +250,6 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        -webkit-box-reflect: below 15px linear-gradient(transparent, transparent, rgba(0,0,0,0.2));
+        margin-bottom: 100px;
     }
