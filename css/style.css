@@ -213,43 +213,115 @@ body {
 }
 
 /*slider 3d*/
+.jh-slider-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .jh-banner {
     width: 100%;
     height: 100vh;
-    text-align: center;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    box-shadow: var(--negro-fondo);
-}
-.jh-banner .jh-slider {
-    position: absolute;
-    width: 200px;
-    height: 250px;
-    top: 10%;
-    left: calc(50% - 100px);
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-    animation: autoRun 20s linear infinite;
-    }
-@keyframes autoRun {
-    from {
-        transform: perspective(1000px) rotateX(-10deg) rotateY(0deg);
-    } to {        transform: perspective(1000px) rotatex(-10deg ) rotatey(360deg);
-    }
+    overflow: hidden;
 }
 
+/* glow central */
+.jh-banner::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,86,10,0.1) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.jh-banner .jh-slider {
+    position: absolute;  
+    top: 10%;
+    width: 220px;
+    height: 280px;
+    transform-style: preserve-3d;
+    animation: autoRun 20s linear infinite;
+}
+
+@keyframes autoRun {
+    from { transform: perspective(1000px) rotateX(-8deg) rotateY(0deg); }
+    to   { transform: perspective(1000px) rotateX(-8deg) rotateY(360deg); }
+}
+
+.jh-banner .jh-slider .jh-item {
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(232, 86, 10, 0.2);
+    transform:
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(450px);
+    transition: border-color 0.3s ease;
+}
+
+.jh-banner .jh-slider .jh-item:hover {
+    border-color: rgba(232, 86, 10, 0.8);
+}
+
+.jh-banner .jh-slider .jh-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.jh-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 40%,
+        rgba(10, 10, 10, 0.5) 70%,
+        rgba(10, 10, 10, 0.85) 100%
+    );
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .jh-banner {
+        height: 70vh;
+    }
+
+    .jh-banner .jh-slider {
+        width: 130px;
+        height: 170px;
+    }
 
     .jh-banner .jh-slider .jh-item {
-        position: absolute;
-        inset: 0 0 0 0;
-        transform: 
-        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-        translateZ(550px);
+        transform:
+            rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(300px);
     }
-    .jh-banner .jh-slider .jh-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        -webkit-box-reflect: below 15px linear-gradient(transparent, transparent, rgba(0,0,0,0.2));
-        margin-bottom: 100px;
+}
+
+@media (max-width: 375px) {
+    .jh-banner .jh-slider {
+        width: 110px;
+        height: 145px;
     }
+
+    .jh-banner .jh-slider .jh-item {
+        transform:
+            rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(240px);
+    }
+}
