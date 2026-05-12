@@ -6,6 +6,7 @@
     --gris-medio: #A0A0A0;
 }
 
+
 /* Configuración Global */
 body {
     font-family: 'Syne', sans-serif; 
@@ -18,6 +19,25 @@ body {
     min-height: 100vh;
     color: var(--blanco-crema);
     overflow-x: hidden;
+    cursor: none !important;
+}
+
+/*forzar desaparicion de el mouse*/
+html, body, a, button, input, select, textarea, .btn, .nav-link, .navbar-brand, .jh-item img, .card {
+    cursor: none !important;
+}
+
+.jh-scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--naranja-salsa);
+    width: 0%; /* El JS controlará esto */
+    z-index: 9999;
+    
+    box-shadow: 0 0 10px rgba(232, 86, 10, 0.5);
+    transition: width 0.1s ease-out; 
 }
 
 
@@ -801,3 +821,34 @@ body {
 .jh-btn-whatsapp:hover::before { transform: translateX(0) }
 .jh-btn-whatsapp span { position: relative; z-index: 1 }
 .jh-btn-whatsapp:hover { color: #fff }
+
+/*cursor pers.*/
+.jh-custom-cursor {
+    width: 6px;
+    height: 6px;
+    background: var(--naranja-salsa);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.2s ease;
+}
+.jh-cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 0.7px solid rgba(232, 86, 10, 0.4); 
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.3s, height 0.3s, background 0.3s, border 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover ~ .jh-cursor-follower,
+a:hover ~ .jh-cursor-follower {
+    transform: scale(1.5);
+    background: rgba(232,86,10,0.1);
+}

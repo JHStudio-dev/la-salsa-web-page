@@ -166,4 +166,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// barra de progreso arriba
+window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById('jh-progress-bar').style.width = scrolled + '%';
+});
+});
+
+// cursores pers.
+const cursor = document.querySelector('.jh-custom-cursor');
+const follower = document.querySelector('.jh-cursor-follower');
+const links = document.querySelectorAll('a, button, .jh-item');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    
+    // retraso para suavidad
+    setTimeout(() => {
+        follower.style.left = e.clientX - 10 + 'px';
+        follower.style.top = e.clientY - 10 + 'px';
+    }, 50);
+});
+
+// Efecto de expansión 
+links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        follower.style.transform = 'scale(2)';
+        follower.style.background = 'rgba(232, 86, 10, 0.2)';
+    });
+    link.addEventListener('mouseleave', () => {
+        follower.style.transform = 'scale(1)';
+        follower.style.background = 'transparent';
+    });
 });
