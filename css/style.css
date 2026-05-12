@@ -1,0 +1,71 @@
+:root {
+    --naranja-salsa: #E8560A;
+    --naranja-vivo: #FF6514;
+    --negro-fondo: #0A0A0A;
+    --blanco-crema: #F8F4EE;
+    --gris-medio: #A0A0A0;
+}
+
+/* Configuración Global */
+body {
+    font-family: 'Syne', sans-serif; 
+    background-color: var(--negro-fondo);
+    color: var(--blanco-crema);
+    overflow-x: hidden;
+}
+
+/*  Navbar  */
+.jh-navbar {
+    background: rgba(10, 10, 10, 0.7) !important;
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(160, 160, 160, 0.1);
+    transition: all 0.4s ease;
+}
+
+.jh-logo {
+    font-weight: 800;
+    color: var(--naranja-salsa) !important;
+    font-size: 1.8rem;
+}
+
+/* Títulos y Textos */
+.jh-title {
+    color: var(--naranja-salsa);
+    font-weight: 800;
+    text-transform: none;
+}
+
+.jh-subtitle {
+    color: var(--gris-medio);
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+}
+
+/* Botón  */
+.jh-btn-primary {
+    background-color: var(--naranja-salsa);
+    color: white;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.jh-btn-primary:hover {
+    background-color: var(--naranja-vivo);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(232, 86, 10, 0.3);
+}
+
+/*Cards de Platillos*/
+.jh-card {
+    border: 1px solid rgba(160, 160, 160, 0.1) !important;
+    background: rgba(28, 28, 28, 0.4) !important;
+    transition: all 0.3s ease;
+}
+
+.jh-card:hover {
+    border-color: var(--naranja-salsa) !important;
+    transform: translateY(-5px);
+}
+
+/*slider 3d*/
