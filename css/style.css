@@ -172,7 +172,7 @@ body {
     transform: translateX(0);
 }
 /* Títulos y Textos */
-.jh-title {
+.jh-title { /*todavia tengo que trabajar en esta parte, quiero que tenga un efecto de sombra o algo asi para que resalte mas */
     color: var(--naranja-salsa);
     font-weight: 800;
     text-transform: none;
