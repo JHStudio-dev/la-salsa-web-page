@@ -9,7 +9,13 @@
 /* Configuración Global */
 body {
     font-family: 'Syne', sans-serif; 
-    background-color: var(--negro-fondo);
+    background-color: var(--negro-fondo) !important;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(232, 86, 10, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(232, 86, 10, 0.05) 0%, transparent 40%);
+    color: var(--blanco-crema);
+    overflow-x: hidden;
+    min-height: 100vh;
     color: var(--blanco-crema);
     overflow-x: hidden;
 }
@@ -31,7 +37,7 @@ body {
     padding: 10px 0; 
 }
 .nav-link {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     letter-spacing: 1px;
     position: relative;
     transition: color 0.3s ease;
@@ -117,8 +123,8 @@ body {
     }
 @keyframes autoRun {
     from {
-        transform: perspective(1000px) rotateY(0deg);
-    } to {        transform: perspective(1000px) rotatey(360deg);
+        transform: perspective(1000px) rotateX(-10deg) rotateY(0deg);
+    } to {        transform: perspective(1000px) rotatex(-10deg ) rotatey(360deg);
     }
 }
 
