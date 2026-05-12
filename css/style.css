@@ -24,11 +24,11 @@ body {
     padding: 20px 0;
 }
 .jh-navbar.navbar-scrolled {
-    background: rgba(10, 10, 10, 0.8) !important;
+    background: rgba(10, 10, 10, 0.85) !important;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 12px 0; 
+    padding: 10px 0; 
 }
 .nav-link {
     font-size: 0.85rem;
